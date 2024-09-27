@@ -1,0 +1,20 @@
+{
+  "name": "ObtenerDataAlbion",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@types/node": "^22.7.4",
+    "axios": "^1.7.7",
+    "nodemon": "^3.1.7",
+    "typescript-require": "^0.3.0"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.3"
+  },
+  "private": true
+}
