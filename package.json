@@ -9,6 +9,7 @@
   "dependencies": {
     "@types/node": "^22.7.4",
     "axios": "^1.7.7",
+    "luxon": "^3.5.0",
     "nodemon": "^3.1.7",
     "typescript-require": "^0.3.0"
   },
