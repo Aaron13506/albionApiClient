@@ -3,7 +3,7 @@ import { getPricesInterface } from './interface/getPricesInterface'
 import axios, { AxiosResponse, AxiosRequestConfig, RawAxiosRequestHeaders } from 'axios';
 import readline from 'node:readline';
 
-const apiServer = 'https://west.albion-online-data.com/api/v2/stats/Charts/'
+const apiServer = 'https://old.west.albion-online-data.com/api/v2/stats/Charts/'
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
@@ -73,7 +73,7 @@ function formatDate(date: Date): string {
 }
 const actualDate = new Date();
 const yesterday = formatDate(new Date(actualDate.getTime()-86400000));
-const sevenDaysAgo = formatDate(new Date(actualDate.getTime()-1209600000))
+const sevenDaysAgo = formatDate(new Date(actualDate.getTime()-691200000))
 
 let inicio = `Escoge la ciudad que quieres revisar:\n  
 1: Caerleon
@@ -88,7 +88,7 @@ let farmArray: { itemName: string; itemAvgPrice: number; itemDailySell: number; 
 
 function getPrices(city: string) {
 // https://west.albion-online-data.com/api/v2/stats/Charts/T3_WHEAT.json?locations=fort%20sterling&date=9-18-2024&end_date=9-25-2024&qualities=1&time-scale=24
-    //console.log(`${apiServer}${farmItems},${herbItems}.json?locations=${city}&date=${sevenDaysAgo}&end_date=${yesterday}&qualities=1&time-scale=24`);
+    console.log(`${apiServer}${farmItems},${herbItems}.json?locations=${city}&date=${sevenDaysAgo}&end_date=${yesterday}&qualities=1&time-scale=24`);
     axios.get(`${farmItems},${herbItems}.json?locations=${city}&date=${sevenDaysAgo}&end_date=${yesterday}&qualities=1&time-scale=24`, {
         timeout: 10000,
         baseURL: apiServer,
